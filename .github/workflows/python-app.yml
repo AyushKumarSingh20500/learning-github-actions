@@ -27,4 +27,15 @@ jobs:
               run: pkill -f "app.py" || true
             - name: 🚀 Run Flask app
               run: |
-                  nohup python3 app.py &
+                  nohup python3 app.py
+                  echo $! > app.pid
+
+            - name: verify
+              run: if ps -p $(cat app.pid) > dev/null; then
+                     echo "App started"
+                   else
+                     echo "App failed" && exit 1
+                   fi
+
+            - name: moving on
+              run: echo "next step"
