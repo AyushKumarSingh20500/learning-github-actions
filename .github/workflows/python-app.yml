@@ -28,6 +28,7 @@ jobs:
             - name: 🚀 Run Flask app
               run: |
                   nohup python3 app.py > app.log 2>&1 &
+                  disown
                   echo $! > app.pid
 
             - name: Verify Flask app
