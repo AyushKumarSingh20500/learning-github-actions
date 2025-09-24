@@ -28,5 +28,3 @@ jobs:
             - name: 🚀 Run Flask app
               run: |
                   nohup python3 app.py &
-                  sleep 5  # Wait a bit to make sure server starts
-                  curl http://127.0.0.1:5000 || true  # Basic check
