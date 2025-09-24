@@ -27,8 +27,6 @@ jobs:
               run: pkill -f "app.py" || true
             - name: 🚀 Run Flask app
               run: |
-                  nohup python3 app.py &
-                  
-
+                  nohup python3 app.py
             - name: moving on
               run: echo "next step"
